@@ -47,7 +47,7 @@ export const db = {
     }
   },
   issues: {
-    insert: async (issue: Omit<Issue, 'id' | 'created_at' | 'updated_at'>) => {
+    insert: async (issue: Omit<Issue, 'id' | 'created_at' | 'updated_at' | 'status'>) => {
       const newIssue: Issue = {
         ...issue,
         id: issueIdCounter++,
@@ -58,12 +58,12 @@ export const db = {
       issues.push(newIssue);
       return newIssue;
     },
-    findAll: async (filters?: { type?: string; status?: string; sort?: 'newest' | 'oldest' }) => {
+    findAll: async (filters?: { type?: any; status?: any; sort?: 'newest' | 'oldest' }) => {
       let filtered = [...issues];
-      if (filters?.type) {
+      if (filters?.type && typeof filters.type === 'string') {
         filtered = filtered.filter(i => i.type === filters.type);
       }
-      if (filters?.status) {
+      if (filters?.status && typeof filters.status === 'string') {
         filtered = filtered.filter(i => i.status === filters.status);
       }
       if (filters?.sort === 'newest') {

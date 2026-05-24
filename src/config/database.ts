@@ -1,10 +1,2 @@
-import { Pool } from 'pg';
-import dotenv from 'dotenv';
-
-dotenv.config();
-
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-});
-
-export default pool;
+// Empty file - we're using mock-db.ts instead
+export default {};
