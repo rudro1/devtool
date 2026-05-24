@@ -113,7 +113,7 @@ export const getAllIssues = async (req: Request, res: Response) => {
   }
 };
 
-export const getSingleIssue = async (req: Request, res: Response) => {
+export const getSingleIssue = async (req: Request<{ id: string }>, res: Response) => {
   try {
     const { id } = req.params;
     const issueId = parseInt(id, 10);
@@ -150,7 +150,7 @@ export const getSingleIssue = async (req: Request, res: Response) => {
   }
 };
 
-export const updateIssue = async (req: Request, res: Response) => {
+export const updateIssue = async (req: Request<{ id: string }>, res: Response) => {
   try {
     const { id } = req.params;
     const issueId = parseInt(id, 10);
@@ -245,7 +245,7 @@ export const updateIssue = async (req: Request, res: Response) => {
   }
 };
 
-export const deleteIssue = async (req: Request, res: Response) => {
+export const deleteIssue = async (req: Request<{ id: string }>, res: Response) => {
   try {
     const { id } = req.params;
     const issueId = parseInt(id, 10);
