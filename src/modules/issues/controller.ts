@@ -115,7 +115,8 @@ export const getAllIssues = async (req: Request, res: Response) => {
 
 export const getSingleIssue = async (req: Request<{ id: string }>, res: Response) => {
   try {
-    const { id } = req.params;
+    const idParam = req.params.id as unknown as string | string[];
+    const id = Array.isArray(idParam) ? idParam[0] : idParam;
     const issueId = parseInt(id, 10);
 
     const issue = await db.issues.findById(issueId);
@@ -152,7 +153,8 @@ export const getSingleIssue = async (req: Request<{ id: string }>, res: Response
 
 export const updateIssue = async (req: Request<{ id: string }>, res: Response) => {
   try {
-    const { id } = req.params;
+    const idParam = req.params.id as unknown as string | string[];
+    const id = Array.isArray(idParam) ? idParam[0] : idParam;
     const issueId = parseInt(id, 10);
     const { title, description, type }: UpdateIssueRequest = req.body;
     const user = req.user;
@@ -247,7 +249,8 @@ export const updateIssue = async (req: Request<{ id: string }>, res: Response) =
 
 export const deleteIssue = async (req: Request<{ id: string }>, res: Response) => {
   try {
-    const { id } = req.params;
+    const idParam = req.params.id as unknown as string | string[];
+    const id = Array.isArray(idParam) ? idParam[0] : idParam;
     const issueId = parseInt(id, 10);
 
     const issue = await db.issues.findById(issueId);
