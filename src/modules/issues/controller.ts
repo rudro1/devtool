@@ -73,12 +73,12 @@ export const createIssue = async (req: Request, res: Response) => {
 
 export const getAllIssues = async (req: Request, res: Response) => {
   try {
-    const { sort = 'newest', type, status }: GetIssuesQuery = req.query;
+    const { sort = 'newest', type, status } = req.query;
 
     const issues = await db.issues.findAll({
-      type,
-      status,
-      sort
+      type: type as string,
+      status: status as string,
+      sort: sort as 'newest' | 'oldest'
     });
 
     if (issues.length === 0) {
