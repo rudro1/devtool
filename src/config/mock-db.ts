@@ -76,7 +76,7 @@ export const db = {
     findById: async (id: number) => {
       return issues.find(i => i.id === id) || null;
     },
-    update: async (id: number, updates: Partial<Omit<Issue, 'id' | 'created_at' | 'updated_at'>>) => {
+    update: async (id: number, updates: any) => {
       const index = issues.findIndex(i => i.id === id);
       if (index === -1) return null;
       issues[index] = {
