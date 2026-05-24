@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevPulse Issue Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>DevPulse - Issue Tracker</h1>
+            <p>Simple bug and feature tracker</p>
+        </header>
+
+        <!-- Login/Signup Section -->
+        <div class="auth-section" id="authSection">
+            <div class="auth-tabs">
+                <button class="tab-btn active" id="loginTab">Login</button>
+                <button class="tab-btn" id="signupTab">Sign Up</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" class="auth-form">
+                <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                <button type="submit">Login Now</button>
+            </form>
+
+            <!-- Signup Form -->
+            <form id="signupForm" class="auth-form hidden">
+                <input type="text" id="signupName" placeholder="Your full name" required>
+                <input type="email" id="signupEmail" placeholder="Your email address" required>
+                <input type="password" id="signupPassword" placeholder="Choose a password" required>
+                <select id="signupRole">
+                    <option value="contributor">I'm a Contributor</option>
+                    <option value="maintainer">I'm a Maintainer</option>
+                </select>
+                <button type="submit">Create My Account</button>
+            </form>
+        </div>
+
+        <!-- Main Dashboard -->
+        <div class="main-section hidden" id="mainSection">
+            <div class="user-info">
+                Welcome, <span id="userName"></span>
+                <span class="badge" id="userRole"></span>
+                <button id="logoutBtn">Logout</button>
+            </div>
+
+            <!-- Create Issue -->
+            <div class="create-issue">
+                <h2>Create a New Issue</h2>
+                <form id="createIssueForm">
+                    <input type="text" id="issueTitle" placeholder="What's the issue about? (max 150 chars)" maxlength="150" required>
+                    <textarea id="issueDescription" placeholder="Please describe the issue in detail (at least 20 characters)..." rows="4" required></textarea>
+                    <select id="issueType" required>
+                        <option value="">What type of issue is this?</option>
+                        <option value="bug">Bug Report</option>
+                        <option value="feature_request">Feature Request</option>
+                    </select>
+                    <button type="submit">Add This Issue</button>
+                </form>
+            </div>
+
+            <!-- Filters -->
+            <div class="filters">
+                <select id="filterType">
+                    <option value="">Show all types</option>
+                    <option value="bug">Only bugs</option>
+                    <option value="feature_request">Only features</option>
+                </select>
+                <select id="filterStatus">
+                    <option value="">Show all statuses</option>
+                    <option value="open">Open</option>
+                    <option value="in_progress">In Progress</option>
+                    <option value="resolved">Resolved</option>
+                </select>
+                <select id="sortBy">
+                    <option value="newest">Newest first</option>
+                    <option value="oldest">Oldest first</option>
+                </select>
+            </div>
+
+            <!-- Issues List -->
+            <div class="issues-list" id="issuesList"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

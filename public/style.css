@@ -1,0 +1,218 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #eaeaea;
+    margin: 0;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+.container {
+    width: 850px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.auth-section, .main-section {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #999;
+}
+
+.auth-tabs {
+    margin-bottom: 15px;
+}
+
+.tab-btn {
+    padding: 8px 15px;
+    margin-right: 5px;
+    border: 1px solid #666;
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+.tab-btn.active {
+    background-color: #0066cc;
+    color: white;
+    border-color: #004499;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.hidden {
+    display: none;
+}
+
+input, select, textarea {
+    padding: 8px;
+    border: 1px solid #888;
+    font-size: 14px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #004499;
+}
+
+.user-info {
+    background-color: #eee;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+
+.badge {
+    display: inline-block;
+    padding: 3px 8px;
+    background-color: #555;
+    color: white;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.badge.contributor {
+    background-color: #0099cc;
+}
+
+.badge.maintainer {
+    background-color: #cc9900;
+}
+
+#logoutBtn {
+    float: right;
+    background-color: #cc3333;
+}
+
+#logoutBtn:hover {
+    background-color: #992222;
+}
+
+.create-issue {
+    background-color: #eee;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+}
+
+#createIssueForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.filters {
+    margin-bottom: 15px;
+}
+
+.filters select {
+    margin-right: 10px;
+    min-width: 150px;
+}
+
+.issue-card {
+    border: 1px solid #999;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #fafafa;
+}
+
+.issue-header {
+    margin-bottom: 10px;
+}
+
+.issue-title {
+    font-size: 17px;
+    font-weight: bold;
+    margin: 0 0 8px 0;
+}
+
+.issue-meta span {
+    display: inline-block;
+    padding: 3px 8px;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.issue-type.bug {
+    background-color: #cc3333;
+    color: white;
+}
+
+.issue-type.feature_request {
+    background-color: #339933;
+    color: white;
+}
+
+.issue-status.open {
+    background-color: #ffcc00;
+    color: #333;
+}
+
+.issue-status.in_progress {
+    background-color: #0099cc;
+    color: white;
+}
+
+.issue-status.resolved {
+    background-color: #888;
+    color: white;
+}
+
+.issue-description {
+    color: #444;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.issue-footer {
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+    font-size: 13px;
+    color: #666;
+}
+
+.issue-reporter {
+    font-weight: bold;
+    color: #333;
+}
+
+.issue-actions {
+    float: right;
+}
+
+.issue-actions button {
+    padding: 6px 12px;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.edit-btn {
+    background-color: #ffcc00;
+    color: #333;
+}
+
+.delete-btn {
+    background-color: #cc3333;
+    color: white;
+}
