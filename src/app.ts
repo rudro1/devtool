@@ -12,8 +12,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const projectRoot = path.join(__dirname, '..');
-const publicPath = path.join(projectRoot, 'public');
+const publicPath = path.join(__dirname, '../public');
 
 app.use(express.static(publicPath));
 
